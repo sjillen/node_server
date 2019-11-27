@@ -1,0 +1,21 @@
+{
+  "development": {
+    "dialect": "sqlite",
+    "storage": "./storage/dev.sqlite3",
+    "logging": false
+},
+"test": {
+    "dialect": "sqlite",
+    "storage": "./storage/test.sqlite3",
+    "logging": false
+},
+"production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false,
+    "logging": false
+}
+}

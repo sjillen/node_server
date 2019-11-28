@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
 
 // Routes
+require('../routes/auth_routes')(app);
 require('../routes/user_routes')(app);
 
 module.exports = app;

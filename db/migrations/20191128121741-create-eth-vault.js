@@ -13,6 +13,11 @@ module.exports = {
             },
             accountId: {
                 type: Sequelize.INTEGER,
+                allowNull: false,
+                references: {
+                    model: 'EthAccounts',
+                    key: 'id',
+                },
             },
             createdAt: {
                 allowNull: false,

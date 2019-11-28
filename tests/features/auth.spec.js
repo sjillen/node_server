@@ -20,8 +20,8 @@ describe('test the auth resource', () => {
             const response = await request(app)
                 .post('/signup')
                 .send(userData);
-            expect(response.status).toEqual(201);
 
+            expect(response.status).toEqual(201);
             const auths = await Auth.findAll({ include: 'user' });
             expect(auths.length).toEqual(1);
             expect(auths[0].user.email).toEqual(userData.email);
@@ -39,6 +39,21 @@ describe('test the auth resource', () => {
             expect(auths.length).toEqual(0);
             const users = await User.findAll({});
             expect(users.length).toEqual(0);
+        });
+
+        test('it should not signup a user with an existing email', async function() {
+            const userData = { email: 'user@mail.com', password: 'password' };
+            await User.create(userData);
+
+            const response = await request(app)
+                .post('/signup')
+                .send(userData);
+
+            expect(response.status).toEqual(422);
+            const auths = await Auth.findAll({});
+            expect(auths.length).toEqual(0);
+            const users = await User.findAll({});
+            expect(users.length).toEqual(1);
         });
     });
 });

@@ -1,0 +1,5 @@
+swagger: '2.0'
+info:
+    title: 'RESTFul API NodeJS'
+    description: 'Documentation for the API routes and resources'
+    version: '0.1.0'

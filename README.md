@@ -2,7 +2,7 @@
 
 ## Tooling
 
-Sequelize, Migrations, Logger and Authentication (more to come)
+Sequelize, Migrations, Logger, Authentication, Swagger (more to come)
 
 ## Purpose
 
